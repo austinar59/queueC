@@ -48,3 +48,8 @@ int dequeue(Queue* q) {
   rNode = NULL;
   return ret;
 }
+Queue* destroyQueue(Queue* q) {
+  free(q);
+  q = NULL;
+  return q;
+}

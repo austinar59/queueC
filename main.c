@@ -15,5 +15,7 @@ int main(int argc, char* argv[]) {
   printf("%d\n", b);
   b = dequeue(q);
   printf("%d\n", b);
+  if(destroyQueue(q) == NULL) {
  	return 0;
+  } else return 1;
 }
