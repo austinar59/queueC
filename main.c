@@ -9,5 +9,11 @@ int main(int argc, char* argv[]) {
   if(enqueue(q, 19)) {
     printf("%d\n", q->end->val);
   }
+  int b = dequeue(q);
+  printf("%d\n", b);
+  b = dequeue(q);
+  printf("%d\n", b);
+  b = dequeue(q);
+  printf("%d\n", b);
  	return 0;
 }

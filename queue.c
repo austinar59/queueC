@@ -27,3 +27,24 @@ int enqueue(Queue* q, int v) {
   q->size++;
   return 1;
 }
+int peek(Queue* q) {
+  if(q != NULL && q->top != NULL)
+    return q->top->val;
+  return 0;
+}
+int dequeue(Queue* q) {
+  if(q == NULL)
+    return 0;
+  if(q->top == NULL)
+    return 0;
+  QNode* rNode = q->top;
+  int ret = rNode->val;
+  if(rNode->next != NULL) {
+    q->top = rNode->next;
+  } else {
+    q->top = NULL;
+  }
+  free(rNode);
+  rNode = NULL;
+  return ret;
+}

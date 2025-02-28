@@ -11,6 +11,7 @@
 	} Queue;
 	Queue* createQueue(int);
 	int enqueue(Queue*, int);
-	QNode* dequeue(Queue*);
+	int dequeue(Queue*);
 	int peek(Queue*);	
+ Queue* destroyQueue(Queue*);
 #endif
