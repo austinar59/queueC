@@ -39,8 +39,14 @@ int enqueue(Queue* q, int v) {
   //sets node value, sets current end's next to the node, then sets the end to the node and
   //increments size, returns 1 (true)
   insert->val = v;
-  q->end->next = insert;
+  
+  //checks if end even exists
+  if(q->end != NULL)
+      q->end->next = insert;
   q->end = insert;
+  //handles case if top empty
+  if(q->top == NULL)
+      q->top = insert;
   q->size++;
   return 1;
 }
@@ -71,7 +77,7 @@ int dequeue(Queue* q) {
     q->top = NULL;
     q->end = NULL;
   }
-  
+  q->size--;
   free(rNode);
   rNode = NULL;
   return ret;
